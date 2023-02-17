@@ -21,7 +21,7 @@ Basic steps (in Ultimate Doom Builder):
 > For easy explosions, place an `RSI_ExplosionSpot` and make its tag match the `user_dest_group` (you can delay the explosion by increasing the `Health` property. This is how many ticks to wait).
 
 
-### Custom Properties: {#custom-properties}
+### Custom Properties
 
 | Name | value | Description |
 | ----- | ----- | ----- |
