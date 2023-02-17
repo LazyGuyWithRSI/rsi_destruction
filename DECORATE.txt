@@ -1,0 +1,145 @@
+
+Actor WallDecal 27001
+{
+	+NOGRAVITY
+	+WALLSPRITE
+	
+	States
+	{
+		Spawn:
+			WALC A -1
+			Stop
+	}
+}
+
+Actor FXDebris 22237 //Code stolen from Kinsie's Metadoom Props
+{
+	+DOOMBOUNCE
+	PROJECTILE
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	+NOTELEPORT
+	-TELESTOMP
+	-SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 1
+	height 1
+	Damage 0
+	bouncefactor 0.5
+	SeeSound "props/thud/soft"
+	gravity 0.5
+	Speed 5
+	States
+	{
+	Spawn:
+		DBRS A 0
+		DBRS A 0 A_SetScale(frandom(0.5, 1.0))
+		DBRS ABCD 0 A_Jump(128, "Setup")
+		goto Setup
+	Setup:
+		"####" # 0 ThrustThingZ (0, random(32,45), 0, 1)
+		"####" # 0 ThrustThing(random(0,360), 8, 1, 0)
+		"####" # 0 A_SetRoll(random(0,360))
+	ChangeDir:
+		"####" # 0 A_Jump(128,"Alt") 
+		goto See
+	See:
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll + 5))
+		loop
+	Alt:
+		"####" # 0 ThrustThingZ(0,6,1,1) 
+		"####" # 1 A_SetRoll((roll - 5))
+		loop
+	Bounce.Floor:
+		//"####" # 0 A_SpawnItem("BloodSplat")
+		goto ChangeDir
+	Bounce.Wall:
+		goto ChangeDir
+	Death:
+		"####" # 0 A_ChangeFlag(NOBLOCKMAP, 0)
+		"####" # 0 A_ChangeFlag(FLATSPRITE, 1)
+		"####" # -1
+		Stop
+    }
+}
+
+Actor FXDebrisRock : FXDebris
+{
+	SeeSound "props/glass/wood"
+	States
+	{
+		Spawn:
+		DBPB A 0
+		DBPB A 0 A_SetScale(frandom(0.2, 1.0))
+		DBPB ABCD 0 A_Jump(128, "Setup")
+		goto Setup
+	}
+}
+
+Actor FXDebrisSpawner 21000
+{
+	Radius 1
+	Height 1
+	+NOGRAVITY
+	
+	States
+	{
+	Spawn:
+		DBRS A 0 NoDelay
+		{
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+		}
+		TNT1 A -1
+		Stop
+		}
+}
+
+Actor FXExplosion 22221
+{
+	Radius 1
+	Height 1
+	Spawnid 201
+	+NOGRAVITY
+	RenderStyle "Add"
+	
+	States
+	{
+	Spawn:
+		MISL B 8 BRIGHT NoDelay A_Playsound("weapons/rocklx")
+		MISL CD 8 BRIGHT
+		Stop
+	}
+}
+
+Actor NTM_FXExplosion : FXExplosion 22222
+{
+	Spawnid 202
+	
+	States
+	{
+	Spawn:
+		NEX2 ABC 2 BRIGHT NoDelay A_Playsound("weapons/rocklx") //A_Playsound("cyber/tracex")
+		NEX2 DE 3 BRIGHT
+		{
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebris", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebrisRock", random(0,72), 2, random(0,360), 2, 6);
+			A_CustomMissile ("FXDebrisRock", random(0,72), 2, random(0,360), 2, 6);
+		}
+		NEX2 FGHIJKLMNOPQRSTUV 2 BRIGHT
+		Stop
+	}
+}
+

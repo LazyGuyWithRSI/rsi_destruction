@@ -1,0 +1,9 @@
+GameInfo {
+	AddEventHandlers = "NTM_Destructables"
+}
+
+DoomEdNums
+{
+	26002 = RSI_TriggerSpot
+	26003 = RSI_ExplosionSpot
+}
