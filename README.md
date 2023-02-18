@@ -59,4 +59,4 @@ Basic steps (in Ultimate Doom Builder):
 ---
 ### Credits
 - Explosion graphics: (one of these, not sure which so they all get credit) 3D Realms, Banjo Software, Lobotomy Software, id Software
-- Explosion effect code: Kinsie's Metadoom Props
+- ExplosionFX actor definitions: Kinsie's Metadoom Props
