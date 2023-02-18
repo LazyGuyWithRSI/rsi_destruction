@@ -10,7 +10,7 @@ Why is that so freaking hard in doom, even with the GZDoom engine?
 
 Well now it's easier than ever. (still a bit of a pain due to engine limitations, but hey). Mappers can create more interactive, explode-y levels with relative ease.
 
-Built for use with [Nobody Told Me About id](https://github.com/LazyGuyWithRSI/NTMAi).
+Built for use with [Nobody Told Me About id](https://github.com/LazyGuyWithRSI/NTMAi) (though not required)
 
 
 ---
