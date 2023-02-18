@@ -8,8 +8,9 @@
 Aren't those Build engine games cool with all those explosions and walls that get holes blown in them?
 Why is that so freaking hard in doom, even with the GZDoom engine?
 
-Well now it's easier than ever. (still a bit of a pain due to engine limitations, but hey)
+Well now it's easier than ever. (still a bit of a pain due to engine limitations, but hey). Mappers can create more interactive, explode-y levels with relative ease.
 
+Built for use with [Nobody Told Me About id](https://github.com/LazyGuyWithRSI/NTMAi).
 ---
 ## **Documentation**
 
@@ -52,3 +53,10 @@ Basic steps (in Ultimate Doom Builder):
 ---
 ### Technical stuff
 *coming soon*
+
+
+---
+---
+### Credits
+- Explosion graphics: (one of these, not sure which so they all get credit) 3D Realms, Banjo Software, Lobotomy Software, id Software
+- Explosion effect code: Kinsie's Metadoom Props
