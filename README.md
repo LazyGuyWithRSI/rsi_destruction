@@ -44,8 +44,8 @@ Basic steps (in Ultimate Doom Builder):
 ### Custom `Actors`
 | Name | Type | Description |
 | ----- | ----- | ----- |
-| RSI_ExplosionSpot | 26002 | Creates an explosion after a delay. `Tag` must match the destruction's `user_dest_group`. `Health` determines delay (in `ticks`). Can be triggered by an `Activate Thing` action.
-| RSI_TriggerSpot | 26003 | When activated, triggers the desctruction of the sector it is in (it really just deals damage to the sector with a tiny silent explosion) |
+| RSI_ExplosionSpot | 26002 | Creates an explosion after a delay. `Tag` must match the destruction's `user_dest_group`. `Health` determines delay (in `ticks`). Will also trigger its `Action`. Can be triggered by an `Activate Thing` action.
+| RSI_TriggerSpot | 26003 | When activated, triggers the desctruction of the sector it is in (it really just deals damage to the sector with a tiny silent explosion), and also triggers its `Action` |
 | WallDecal | 27001 | A sprite for cracks / show a wall can be destroyed. Destruction will remove any decals whose `Tag` matches the `user_dest_group`. (*Not to be confused with Zdoom `Decal`*)
 
 
