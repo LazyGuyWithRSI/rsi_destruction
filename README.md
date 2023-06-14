@@ -1,8 +1,8 @@
 # RSI_DESTRUCTION
 
 ## Build-style destruction for GZDoom! *NO scripting required!*
-### [Video demonstration and instructions]()
-### [Demo WAD]()
+### (TODO) [Video demonstration and instructions]()
+### (TODO) [Demo WAD]()
 ---
 
 Aren't those Build engine games cool with all those explosions and walls that get holes blown in them?
